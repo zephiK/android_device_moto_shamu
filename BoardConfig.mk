@@ -164,4 +164,7 @@ BOARD_USES_QC_TIME_SERVICES := true
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
+# Enable workaround for slow rom flash
+BOARD_SUPPRESS_SECURE_ERASE := true
+
 -include vendor/moto/shamu/BoardConfigVendor.mk
