@@ -336,4 +336,8 @@
     <!-- Default value for led color when battery is medium charged
          We set this to blue as low is red and charged is green -->
     <integer name="config_notificationsBatteryMediumARGB">0xFF0000FF</integer>
+
+    <!-- Device will display option to wake only if proximity sensor is uncovered -->
+    <bool name="config_proximityCheckOnWake">true</bool>
+    <integer name="config_proximityCheckTimeout">400</integer>
 </resources>
