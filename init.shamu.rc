@@ -17,6 +17,7 @@
 import init.shamu.usb.rc
 import init.shamu.power.rc
 import init.shamu.diag.rc
+import init.performance_profiles.rc
 
 on early-init
     mkdir /firmware 0771 system system
@@ -248,8 +249,11 @@ on boot
     chown media media /sys/devices/c55_ctrl/gpio_core/value
     chown media media /sys/devices/c55_ctrl/gpio_reset/value
 
-    # Prevent permission denied error for telephony
-    chmod 0644 /proc/cmdline
+    # Franco Kernel
+    chown system system /sys/class/leds/charging/brightness
+    chown system system /sys/class/leds/charging/max_brightness
+    echo battery-charging > /sys/class/leds/charging/trigger
+    echo 1 > /sys/class/leds/charging/max_brightness
 
 # subsystem ramdump collection
 on property:persist.sys.qc.sub.rdump.on=*
@@ -534,13 +538,14 @@ service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usbdisk /s
    disabled
 
 service qseecomd /system/bin/qseecomd
-   class core
-   user root
-   group root
+    class core
+    user root
+    group root
 
 service mpdecision /system/bin/mpdecision --avg_comp
-   class main
-   user root
+    class main
+    user root
+    disabled
 
 service ss_ramdump /system/bin/subsystem_ramdump
     class main
@@ -549,14 +554,14 @@ service ss_ramdump /system/bin/subsystem_ramdump
     disabled
 
 service thermal-engine /system/bin/thermal-engine
-   class main
-   user root
-   group root
+    class main
+    user root
+    group root
 
 service time_daemon /system/bin/time_daemon
-   class late_start
-   user root
-   group root
+    class late_start
+    user root
+    group root
 
 on property:init.svc.bootanim=stopped
     start usf-post-boot
