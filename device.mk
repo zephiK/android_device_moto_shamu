@@ -241,6 +241,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnCdmaDevice=1 \
     ro.telephony.get_imsi_from_sim=true
 
+# Tethering
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.dun.override=0
+
 # SIM based FSG loading default enabled
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.fsg_reload_on=1 \
