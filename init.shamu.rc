@@ -246,18 +246,14 @@ on boot
     chown media media /sys/devices/c55_ctrl/gpio_core/value
     chown media media /sys/devices/c55_ctrl/gpio_reset/value
 
-    # LED permissions
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_ctrl
+
+	# LED permissions
     chown system system /sys/class/leds/charging/brightness
     chown system system /sys/class/leds/charging/max_brightness
-    echo battery-charging > /sys/class/leds/charging/trigger
-    echo 1 > /sys/class/leds/charging/max_brightness
-
-    chmod 664 /sys/class/leds/red/brightness
-    chmod 664 /sys/class/leds/green/brightness
-    chmod 664 /sys/class/leds/blue/brightness
-
-    # Prevent permission denied error for telephony
-    chmod 0644 /proc/cmdline
+    write /sys/class/leds/charging/trigger battery-charging
+    write /sys/class/leds/charging/max_brightness 1
 
 # subsystem ramdump collection
 on property:persist.sys.qc.sub.rdump.on=*
@@ -618,3 +614,4 @@ on property:ro.mdm_helper_proxy_req=true
 
 on property:init.svc.ril-daemon=running
     setprop ro.mdm_helper_proxy_req true
+
