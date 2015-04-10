@@ -127,6 +127,7 @@ BOARD_SEPOLICY_UNION += \
         file.te \
         gsiffd.te \
         ims.te \
+        init.te \
         irsc_util.te \
         mdm_helper.te \
         mediaserver.te \
@@ -169,9 +170,6 @@ BOARD_HAS_AUDIO_DSP := true
 USE_DEVICE_SPECIFIC_CAMERA:= true
 
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.shamu
-
-# Time
-BOARD_USES_QC_TIME_SERVICES := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true

@@ -34,6 +34,7 @@ PRODUCT_COPY_FILES += \
     device/moto/shamu/init.shamu.rc:root/init.shamu.rc \
     device/moto/shamu/init.shamu.power.rc:root/init.shamu.power.rc \
     device/moto/shamu/init.shamu.usb.rc:root/init.shamu.usb.rc \
+    device/moto/shamu/init.performance_profiles.rc:root/init.performance_profiles.rc \
     device/moto/shamu/fstab.shamu:root/fstab.shamu \
     device/moto/shamu/ueventd.shamu.rc:root/ueventd.shamu.rc
 
@@ -104,8 +105,6 @@ PRODUCT_COPY_FILES += \
 # For SPN display
 PRODUCT_COPY_FILES += \
     device/moto/shamu/spn-conf.xml:system/etc/spn-conf.xml
-
-PRODUCT_TAGS += dalvik.gc.type-precise
 
 # This device is 560dpi.  However the platform doesn't
 # currently contain all of the bitmaps at 560dpi density so
@@ -186,7 +185,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libqomx_core \
-    libmm-qcamera \
     libmmcamera_interface \
     libmmjpeg_interface \
     camera.msm8084 \

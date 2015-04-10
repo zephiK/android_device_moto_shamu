@@ -7,7 +7,7 @@ init_daemon_domain(ss_ramdump)
 # read the contents of the /dev directory
 allow ss_ramdump device:dir r_dir_perms;
 
-userdebug_or_eng(`
+
   # Read /dev/ramdump_* character devices
   allow ss_ramdump ramdump_device:chr_file r_file_perms;
 
@@ -19,4 +19,4 @@ userdebug_or_eng(`
   # Needed to allow UID=root to access /data/tombstones,
   # which is owned by UID=system
   allow ss_ramdump self:capability dac_override;
-')
+
