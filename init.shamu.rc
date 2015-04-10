@@ -256,7 +256,7 @@ on boot
     chown system system /sys/class/leds/charging/brightness
     chown system system /sys/class/leds/charging/max_brightness
     write /sys/class/leds/charging/trigger battery-charging
-    write /sys/class/leds/charging/max_brightness 1
+    write /sys/class/leds/charging/max_brightness 0
 
     chown system system /sys/devices/platform/kcal_ctrl.0/kcal
     chown system system /sys/devices/platform/kcal_ctrl.0/kcal_ctrl
