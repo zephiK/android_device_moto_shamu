@@ -175,6 +175,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=false \
     persist.radio.sib16_support=1 \
+    persist.rcs.supported=0 \
     persist.data.qmi.adb_logmask=0
 
 # Audio effects
