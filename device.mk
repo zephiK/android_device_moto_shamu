@@ -178,6 +178,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=false 
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.isUsbOtgEnabled=1
+
 # Audio effects
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
