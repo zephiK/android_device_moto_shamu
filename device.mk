@@ -178,6 +178,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rcs.supported=0 \
     persist.data.qmi.adb_logmask=0
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.isUsbOtgEnabled=1
+
 # Audio effects
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
