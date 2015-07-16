@@ -254,7 +254,7 @@ on boot
     chown system system /sys/class/leds/charging/brightness
     chown system system /sys/class/leds/charging/max_brightness
     write /sys/class/leds/charging/trigger battery-charging
-    write /sys/class/leds/charging/max_brightness 1
+    write /sys/class/leds/charging/max_brightness 0
 
 # subsystem ramdump collection
 on property:persist.sys.qc.sub.rdump.on=*
